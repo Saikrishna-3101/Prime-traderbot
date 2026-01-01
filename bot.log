@@ -1,0 +1,194 @@
+# Binance Futures Trading Bot - Log File
+# This file will contain structured logging output when the bot is executed
+# Log format: TIMESTAMP - TradingBot - LEVEL - MESSAGE
+#
+# Example log entries:
+# 2024-01-01 12:00:00 - TradingBot - INFO - Market Order Bot initialized for Binance Futures Testnet
+# 2024-01-01 12:00:01 - TradingBot - INFO - API Request - POST /fapi/v1/order
+# 2024-01-01 12:00:02 - TradingBot - INFO - Order placed successfully - Type: MARKET, Symbol: BTCUSDT, Side: BUY, Quantity: 0.01
+#
+# Run the CLI commands to generate actual log entries:
+# python src/market_orders.py BTCUSDT BUY 0.01
+# python src/limit_orders.py BTCUSDT SELL 0.01 42000
+# python src/advanced/stop_limit.py BTCUSDT BUY 0.01 41500 41600
+# python src/advanced/twap.py BTCUSDT BUY 0.05 5 10
+2025-12-31 16:34:38 - TradingBot - INFO - Market Order Bot initialized for Binance Futures Testnet
+2025-12-31 16:34:38 - TradingBot - INFO - API Request - POST /fapi/v1/order
+2025-12-31 16:34:39 - TradingBot - ERROR - Error in Market order placement - BTCUSDT BUY: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 48, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-12-31 16:34:39 - TradingBot - ERROR - Error in CLI execution: Order Error: Market order failed: Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 48, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 83, in main
+    order_response = bot.place_market_order(validated_symbol, validated_side, validated_quantity)
+  File "D:\Tradingbot\src\market_orders.py", line 57, in place_market_order
+    raise ValueError(f"Market order failed: {e.message}")
+ValueError: Market order failed: Invalid API-key, IP, or permissions for action
+2025-12-31 18:43:02 - TradingBot - INFO - Market Order Bot initialized for Binance Futures Testnet
+2025-12-31 18:43:02 - TradingBot - INFO - API Request - POST /fapi/v1/order
+2025-12-31 18:43:03 - TradingBot - ERROR - Error in Market order placement - BTCUSDT BUY: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 48, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-12-31 18:43:03 - TradingBot - ERROR - Error in CLI execution: Order Error: Market order failed: Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 48, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 83, in main
+    order_response = bot.place_market_order(validated_symbol, validated_side, validated_quantity)
+  File "D:\Tradingbot\src\market_orders.py", line 57, in place_market_order
+    raise ValueError(f"Market order failed: {e.message}")
+ValueError: Market order failed: Invalid API-key, IP, or permissions for action
+2025-12-31 20:08:42 - TradingBot - INFO - Market Order Bot initialized for Binance Futures Testnet
+2025-12-31 20:08:42 - TradingBot - INFO - API Request - POST /fapi/v1/order
+2025-12-31 20:08:43 - TradingBot - ERROR - Error in Market order placement - BTCUSDT BUY: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 64, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-12-31 20:08:43 - TradingBot - ERROR - Error in CLI execution: Order Error: Market order failed: Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 64, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 110, in main
+    order_response = bot.place_market_order(
+        validated_symbol,
+        validated_side,
+        validated_quantity
+    )
+  File "D:\Tradingbot\src\market_orders.py", line 80, in place_market_order
+    raise ValueError(f"Market order failed: {e.message}")
+ValueError: Market order failed: Invalid API-key, IP, or permissions for action
+2025-12-31 20:39:15 - TradingBot - INFO - Market Order Bot initialized for Binance Futures Testnet
+2025-12-31 20:39:15 - TradingBot - INFO - API Request - POST /fapi/v1/order
+2025-12-31 20:39:17 - TradingBot - ERROR - Error in Market order placement - BTCUSDT BUY: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 64, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-12-31 20:39:17 - TradingBot - ERROR - Error in CLI execution: Order Error: Market order failed: Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 64, in place_market_order
+    order = self.client.futures_create_order(**params)
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 7867, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 143, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 106, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Tradingbot\.venv\Lib\site-packages\binance\client.py", line 115, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Tradingbot\src\market_orders.py", line 110, in main
+    order_response = bot.place_market_order(
+        validated_symbol,
+        validated_side,
+        validated_quantity
+    )
+  File "D:\Tradingbot\src\market_orders.py", line 80, in place_market_order
+    raise ValueError(f"Market order failed: {e.message}")
+ValueError: Market order failed: Invalid API-key, IP, or permissions for action
