@@ -108,9 +108,3 @@ This is a **Binance Testnet account-level restriction**, not a client-side imple
 The bot correctly constructs and submits Futures API requests and handles errors gracefully.
 
 ---
-
-## 📄 Notes for Evaluators
-
-* The implementation fully satisfies the assignment requirements for Futures order handling, validation, logging, and structure.
-* Order execution failures are due to external Testnet limitations and are documented in `report.pdf`.
-* The architecture allows immediate execution if proper Testnet permissions are provisioned.
