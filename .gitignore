@@ -1,0 +1,54 @@
+# ===============================
+# Python cache / compiled files
+# ===============================
+__pycache__/
+*.py[cod]
+
+# ===============================
+# Virtual environments
+# ===============================
+.venv/
+venv/
+env/
+ENV/
+
+# ===============================
+# Environment variables & secrets
+# ===============================
+.env
+.env.*
+binance_keys.txt
+api_keys.txt
+secrets.json
+credentials.json
+config.ini
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+
+# ===============================
+# IDE / Editor settings
+# ===============================
+.vscode/
+.idea/
+*.iml
+*.code-workspace
+
+# ===============================
+# OS-specific files
+# ===============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===============================
+# Temporary / backup files
+# ===============================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
